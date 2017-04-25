@@ -11,4 +11,12 @@ import UIKit
 class PhotosViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
+    var store: PhotoStore!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Starts web exchange for the photos when the view controller comes onscreen - pg. 359
+        store.fetchInterestingPhotos()
+    }
 }
