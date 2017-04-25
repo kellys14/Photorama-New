@@ -16,47 +16,57 @@ class PhotosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Starts web exchange for the photos when the view controller comes onscreen - pg. 359
+  /*      // Starts web exchange for the photos when the view controller comes onscreen - pg. 359
         store.fetchInterestingPhotos {
             (PhotosResult) -> Void in // pg. 370
             
             switch PhotosResult { // pg. 370
             case let .success(photos):
-                print("Successfully found \(photos.count) photos.")
+                print("Successfully found \(photos.count) interesting photos.")
                 if let firstPhoto = photos.first { // pg. 372
-                    self.updateImageView(for: firstPhoto)
+                    self.updateImageView(for: firstPhoto, type: false)
                 }
             case let .failure(error):
                 print("Error fetching interesting photos: \(error)")
             }
-        }
+        } */
         // Chap. 20 Silver **
         store.fetchRecentPhotos {
             (PhotosResult) -> Void in
             
             switch PhotosResult {
             case let .success(photos):
-                print("Successfully found \(photos.count) photos")
+                print("Successfully found \(photos.count) recent photos")
                 if let firstPhoto = photos.first { // pg. 372
-                    self.updateImageView(for: firstPhoto)
+                    self.updateImageView(for: firstPhoto, type: true)
                 }
             case let .failure(error):
                 print("Error fetching recent photos: \(error)")
             }
         }
-        // Chap. 20 Silver End
+        // Chap. 20 Silver End */
     }
     
-    func updateImageView(for photo: Photo) {
+    func updateImageView(for photo: Photo, type: Bool) {
         // Method that will fetch image and display to image view
         store.fetchImage(for: photo) {
             (imageResult) -> Void in
             
+            if type == false {
             switch imageResult { // pg. 372
             case let .success(image):
                 self.imageView.image = image
             case let .failure(error):
                 print("Error downloading image: \(error)")
+            }
+            }
+            else if type == true {
+                switch imageResult { // pg. 372
+                case let .success(image):
+                    self.imageView.image = image
+                case let .failure(error):
+                    print("Error downloading image: \(error)")
+                }
             }
         }
     }
