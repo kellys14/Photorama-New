@@ -29,8 +29,22 @@ class PhotosViewController: UIViewController {
             case let .failure(error):
                 print("Error fetching interesting photos: \(error)")
             }
-            
         }
+        // Chap. 20 Silver **
+        store.fetchRecentPhotos {
+            (PhotosResult) -> Void in
+            
+            switch PhotosResult {
+            case let .success(photos):
+                print("Successfully found \(photos.count) photos")
+                if let firstPhoto = photos.first { // pg. 372
+                    self.updateImageView(for: firstPhoto)
+                }
+            case let .failure(error):
+                print("Error fetching recent photos: \(error)")
+            }
+        }
+        // Chap. 20 Silver End
     }
     
     func updateImageView(for photo: Photo) {

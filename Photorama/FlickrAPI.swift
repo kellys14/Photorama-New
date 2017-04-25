@@ -14,6 +14,7 @@ enum FlickrError: Error {
 
 enum Method: String {
     case interestingPhotos = "flickr.interestingness.getList"
+    case recentPhotos = "flickr.photos.getRecent" // Chap 20 Silver Challenge **
 }
 
 struct FlickrAPI {
@@ -61,6 +62,10 @@ struct FlickrAPI {
         return flickrURL(method: .interestingPhotos, parameters: ["extras": "url_h, date_taken"])
     }
     
+    static var recentPhotoURL: URL { // Attempting Chap. 20 Silver **
+        return flickrURL(method: .recentPhotos, parameters: ["extras": "url_h, date_taken"])
+    }
+    
     static func photos(fromJSON data: Data) -> PhotosResult { // pg. 364
         // Method that takes in an instance of Data and uses the JSONSerialization
         // class to convert the data into basic foundation objects
@@ -95,8 +100,9 @@ struct FlickrAPI {
         }
     }
     
-    // Method to parse a JSON dictionary into a Photo instance
+    
     private static func photo(fromJSON json: [String : Any]) -> Photo? { // pg. 366
+        // Method to parse a JSON dictionary into a Photo instance
         guard
             let photoID = json["id"] as? String,
             let title = json["title"] as? String,

@@ -36,12 +36,36 @@ class PhotoStore {
             (data, response, error) -> Void in
             
             let result = self.processPhotosRequest(data: data, error: error) // pg. 368
+            
+            // Chapter 20 Bronze Challenge Start **
+            let responseInfo = response as! HTTPURLResponse
+            print("StatusCode: \(responseInfo.statusCode)")
+            print("HeaderField: \(responseInfo.allHeaderFields)")
+            // Chapter 20 Bronze Challenge End
+            
             OperationQueue.main.addOperation {
                 completion(result) // pg. 368
             }
         }
         task.resume()
     }
+    
+    // Chap. 20 Silver Challenge **
+    func fetchRecentPhotos(completion: @escaping (PhotosResult) -> Void) {
+        let url = FlickrAPI.recentPhotoURL
+        let request = URLRequest(url: url)
+        let task = session.dataTask(with: request) {
+            (data, response, error) -> Void in
+            
+            let result = self.processPhotosRequest(data: data, error: error)
+            
+            OperationQueue.main.addOperation {
+                completion(result)
+            }
+        }
+        task.resume()
+    }
+    // Chap. 20 Silver End
     
     private func processPhotosRequest(data: Data?, error: Error?) -> PhotosResult { // pg. 368
         // Method that will process JSON data that is returned from the web request
