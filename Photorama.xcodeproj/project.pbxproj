@@ -17,6 +17,7 @@
 		4799AB9F1EAEE8BE00F48505 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799AB9E1EAEE8BE00F48505 /* FlickrAPI.swift */; };
 		4799ABA11EAEF0AF00F48505 /* PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799ABA01EAEF0AF00F48505 /* PhotoStore.swift */; };
 		4799ABA31EAEF6D400F48505 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799ABA21EAEF6D400F48505 /* Photo.swift */; };
+		4799ABA51EAFEE7500F48505 /* RecentPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799ABA41EAFEE7500F48505 /* RecentPhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		4799AB9E1EAEE8BE00F48505 /* FlickrAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
 		4799ABA01EAEF0AF00F48505 /* PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
 		4799ABA21EAEF6D400F48505 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		4799ABA41EAFEE7500F48505 /* RecentPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentPhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				4799AB9C1EAEE1FE00F48505 /* PhotosViewController.swift */,
 				4799ABA21EAEF6D400F48505 /* Photo.swift */,
 				4799AB721EAEE18A00F48505 /* Main.storyboard */,
+				4799ABA41EAFEE7500F48505 /* RecentPhotosViewController.swift */,
 				4799ABA01EAEF0AF00F48505 /* PhotoStore.swift */,
 				4799AB9E1EAEE8BE00F48505 /* FlickrAPI.swift */,
 				4799AB751EAEE18A00F48505 /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4799ABA51EAFEE7500F48505 /* RecentPhotosViewController.swift in Sources */,
 				4799AB9F1EAEE8BE00F48505 /* FlickrAPI.swift in Sources */,
 				4799AB9D1EAEE1FE00F48505 /* PhotosViewController.swift in Sources */,
 				4799ABA11EAEF0AF00F48505 /* PhotoStore.swift in Sources */,

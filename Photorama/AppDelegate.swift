@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let photosViewController = rootViewController.topViewController as! PhotosViewController
         photosViewController.store = PhotoStore()
         
+        // How to I inject to give RecentPhotosViewController an instance of PhotoStore
+     //   let recentPhotosViewController = rootViewController.visibleViewController as! RecentPhotosViewController
+     //   recentPhotosViewController.store = PhotoStore()
+                
         return true
     }
 

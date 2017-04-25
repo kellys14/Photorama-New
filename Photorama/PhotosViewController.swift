@@ -16,7 +16,7 @@ class PhotosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-  /*      // Starts web exchange for the photos when the view controller comes onscreen - pg. 359
+        // Starts web exchange for the photos when the view controller comes onscreen - pg. 359
         store.fetchInterestingPhotos {
             (PhotosResult) -> Void in // pg. 370
             
@@ -29,8 +29,8 @@ class PhotosViewController: UIViewController {
             case let .failure(error):
                 print("Error fetching interesting photos: \(error)")
             }
-        } */
-        // Chap. 20 Silver **
+        } 
+     /*   // Chap. 20 Silver **
         store.fetchRecentPhotos {
             (PhotosResult) -> Void in
             
@@ -52,21 +52,11 @@ class PhotosViewController: UIViewController {
         store.fetchImage(for: photo) {
             (imageResult) -> Void in
             
-            if type == false {
             switch imageResult { // pg. 372
             case let .success(image):
                 self.imageView.image = image
             case let .failure(error):
                 print("Error downloading image: \(error)")
-            }
-            }
-            else if type == true {
-                switch imageResult { // pg. 372
-                case let .success(image):
-                    self.imageView.image = image
-                case let .failure(error):
-                    print("Error downloading image: \(error)")
-                }
             }
         }
     }
