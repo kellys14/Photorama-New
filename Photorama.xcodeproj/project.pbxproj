@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4799AB6F1EAEE18A00F48505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799AB6E1EAEE18A00F48505 /* AppDelegate.swift */; };
+		4799AB711EAEE18A00F48505 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799AB701EAEE18A00F48505 /* ViewController.swift */; };
+		4799AB741EAEE18A00F48505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4799AB721EAEE18A00F48505 /* Main.storyboard */; };
+		4799AB761EAEE18A00F48505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4799AB751EAEE18A00F48505 /* Assets.xcassets */; };
+		4799AB791EAEE18A00F48505 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4799AB771EAEE18A00F48505 /* LaunchScreen.storyboard */; };
+		4799AB841EAEE18A00F48505 /* PhotoramaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799AB831EAEE18A00F48505 /* PhotoramaTests.swift */; };
+		4799AB8F1EAEE18A00F48505 /* PhotoramaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799AB8E1EAEE18A00F48505 /* PhotoramaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4799AB801EAEE18A00F48505 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4799AB631EAEE18A00F48505 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4799AB6A1EAEE18A00F48505;
+			remoteInfo = Photorama;
+		};
+		4799AB8B1EAEE18A00F48505 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4799AB631EAEE18A00F48505 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4799AB6A1EAEE18A00F48505;
+			remoteInfo = Photorama;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4799AB6B1EAEE18A00F48505 /* Photorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4799AB6E1EAEE18A00F48505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4799AB701EAEE18A00F48505 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4799AB731EAEE18A00F48505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4799AB751EAEE18A00F48505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4799AB781EAEE18A00F48505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4799AB7A1EAEE18A00F48505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4799AB7F1EAEE18A00F48505 /* PhotoramaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoramaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4799AB831EAEE18A00F48505 /* PhotoramaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoramaTests.swift; sourceTree = "<group>"; };
+		4799AB851EAEE18A00F48505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4799AB8A1EAEE18A00F48505 /* PhotoramaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoramaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4799AB8E1EAEE18A00F48505 /* PhotoramaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoramaUITests.swift; sourceTree = "<group>"; };
+		4799AB901EAEE18A00F48505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4799AB681EAEE18A00F48505 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4799AB7C1EAEE18A00F48505 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4799AB871EAEE18A00F48505 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4799AB621EAEE18A00F48505 = {
+			isa = PBXGroup;
+			children = (
+				4799AB6D1EAEE18A00F48505 /* Photorama */,
+				4799AB821EAEE18A00F48505 /* PhotoramaTests */,
+				4799AB8D1EAEE18A00F48505 /* PhotoramaUITests */,
+				4799AB6C1EAEE18A00F48505 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4799AB6C1EAEE18A00F48505 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4799AB6B1EAEE18A00F48505 /* Photorama.app */,
+				4799AB7F1EAEE18A00F48505 /* PhotoramaTests.xctest */,
+				4799AB8A1EAEE18A00F48505 /* PhotoramaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4799AB6D1EAEE18A00F48505 /* Photorama */ = {
+			isa = PBXGroup;
+			children = (
+				4799AB6E1EAEE18A00F48505 /* AppDelegate.swift */,
+				4799AB701EAEE18A00F48505 /* ViewController.swift */,
+				4799AB721EAEE18A00F48505 /* Main.storyboard */,
+				4799AB751EAEE18A00F48505 /* Assets.xcassets */,
+				4799AB771EAEE18A00F48505 /* LaunchScreen.storyboard */,
+				4799AB7A1EAEE18A00F48505 /* Info.plist */,
+			);
+			path = Photorama;
+			sourceTree = "<group>";
+		};
+		4799AB821EAEE18A00F48505 /* PhotoramaTests */ = {
+			isa = PBXGroup;
+			children = (
+				4799AB831EAEE18A00F48505 /* PhotoramaTests.swift */,
+				4799AB851EAEE18A00F48505 /* Info.plist */,
+			);
+			path = PhotoramaTests;
+			sourceTree = "<group>";
+		};
+		4799AB8D1EAEE18A00F48505 /* PhotoramaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4799AB8E1EAEE18A00F48505 /* PhotoramaUITests.swift */,
+				4799AB901EAEE18A00F48505 /* Info.plist */,
+			);
+			path = PhotoramaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4799AB6A1EAEE18A00F48505 /* Photorama */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4799AB931EAEE18A00F48505 /* Build configuration list for PBXNativeTarget "Photorama" */;
+			buildPhases = (
+				4799AB671EAEE18A00F48505 /* Sources */,
+				4799AB681EAEE18A00F48505 /* Frameworks */,
+				4799AB691EAEE18A00F48505 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Photorama;
+			productName = Photorama;
+			productReference = 4799AB6B1EAEE18A00F48505 /* Photorama.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4799AB7E1EAEE18A00F48505 /* PhotoramaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4799AB961EAEE18A00F48505 /* Build configuration list for PBXNativeTarget "PhotoramaTests" */;
+			buildPhases = (
+				4799AB7B1EAEE18A00F48505 /* Sources */,
+				4799AB7C1EAEE18A00F48505 /* Frameworks */,
+				4799AB7D1EAEE18A00F48505 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4799AB811EAEE18A00F48505 /* PBXTargetDependency */,
+			);
+			name = PhotoramaTests;
+			productName = PhotoramaTests;
+			productReference = 4799AB7F1EAEE18A00F48505 /* PhotoramaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4799AB891EAEE18A00F48505 /* PhotoramaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4799AB991EAEE18A00F48505 /* Build configuration list for PBXNativeTarget "PhotoramaUITests" */;
+			buildPhases = (
+				4799AB861EAEE18A00F48505 /* Sources */,
+				4799AB871EAEE18A00F48505 /* Frameworks */,
+				4799AB881EAEE18A00F48505 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4799AB8C1EAEE18A00F48505 /* PBXTargetDependency */,
+			);
+			name = PhotoramaUITests;
+			productName = PhotoramaUITests;
+			productReference = 4799AB8A1EAEE18A00F48505 /* PhotoramaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4799AB631EAEE18A00F48505 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Sean Melnick Kelly";
+				TargetAttributes = {
+					4799AB6A1EAEE18A00F48505 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					4799AB7E1EAEE18A00F48505 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4799AB6A1EAEE18A00F48505;
+					};
+					4799AB891EAEE18A00F48505 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4799AB6A1EAEE18A00F48505;
+					};
+				};
+			};
+			buildConfigurationList = 4799AB661EAEE18A00F48505 /* Build configuration list for PBXProject "Photorama" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4799AB621EAEE18A00F48505;
+			productRefGroup = 4799AB6C1EAEE18A00F48505 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4799AB6A1EAEE18A00F48505 /* Photorama */,
+				4799AB7E1EAEE18A00F48505 /* PhotoramaTests */,
+				4799AB891EAEE18A00F48505 /* PhotoramaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4799AB691EAEE18A00F48505 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4799AB791EAEE18A00F48505 /* LaunchScreen.storyboard in Resources */,
+				4799AB761EAEE18A00F48505 /* Assets.xcassets in Resources */,
+				4799AB741EAEE18A00F48505 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4799AB7D1EAEE18A00F48505 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4799AB881EAEE18A00F48505 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4799AB671EAEE18A00F48505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4799AB711EAEE18A00F48505 /* ViewController.swift in Sources */,
+				4799AB6F1EAEE18A00F48505 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4799AB7B1EAEE18A00F48505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4799AB841EAEE18A00F48505 /* PhotoramaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4799AB861EAEE18A00F48505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4799AB8F1EAEE18A00F48505 /* PhotoramaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4799AB811EAEE18A00F48505 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4799AB6A1EAEE18A00F48505 /* Photorama */;
+			targetProxy = 4799AB801EAEE18A00F48505 /* PBXContainerItemProxy */;
+		};
+		4799AB8C1EAEE18A00F48505 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4799AB6A1EAEE18A00F48505 /* Photorama */;
+			targetProxy = 4799AB8B1EAEE18A00F48505 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4799AB721EAEE18A00F48505 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4799AB731EAEE18A00F48505 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4799AB771EAEE18A00F48505 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4799AB781EAEE18A00F48505 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4799AB911EAEE18A00F48505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4799AB921EAEE18A00F48505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4799AB941EAEE18A00F48505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Photorama/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanmelnickkelly.Photorama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4799AB951EAEE18A00F48505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Photorama/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanmelnickkelly.Photorama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4799AB971EAEE18A00F48505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PhotoramaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanmelnickkelly.PhotoramaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Photorama.app/Photorama";
+			};
+			name = Debug;
+		};
+		4799AB981EAEE18A00F48505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PhotoramaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanmelnickkelly.PhotoramaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Photorama.app/Photorama";
+			};
+			name = Release;
+		};
+		4799AB9A1EAEE18A00F48505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PhotoramaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanmelnickkelly.PhotoramaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Photorama;
+			};
+			name = Debug;
+		};
+		4799AB9B1EAEE18A00F48505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = PhotoramaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seanmelnickkelly.PhotoramaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Photorama;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4799AB661EAEE18A00F48505 /* Build configuration list for PBXProject "Photorama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4799AB911EAEE18A00F48505 /* Debug */,
+				4799AB921EAEE18A00F48505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4799AB931EAEE18A00F48505 /* Build configuration list for PBXNativeTarget "Photorama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4799AB941EAEE18A00F48505 /* Debug */,
+				4799AB951EAEE18A00F48505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4799AB961EAEE18A00F48505 /* Build configuration list for PBXNativeTarget "PhotoramaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4799AB971EAEE18A00F48505 /* Debug */,
+				4799AB981EAEE18A00F48505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4799AB991EAEE18A00F48505 /* Build configuration list for PBXNativeTarget "PhotoramaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4799AB9A1EAEE18A00F48505 /* Debug */,
+				4799AB9B1EAEE18A00F48505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4799AB631EAEE18A00F48505 /* Project object */;
+}
