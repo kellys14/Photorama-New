@@ -8,28 +8,85 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController {
+class PhotosViewController: UIViewController, UICollectionViewDelegate {
     
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var collectionView: UICollectionView! // pg. 383
+    
     var store: PhotoStore!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let photoDataSource = PhotoDataSource()
         
+    override func viewDidLoad() {
+        // Override to set delegates start web exchange for the photos when
+        // the view controller comes on screen
+        
+        super.viewDidLoad()
+            
+        collectionView.dataSource = photoDataSource
+        collectionView.delegate = self // Sets PhotosViewController as delegate
+            
         // Starts web exchange for the photos when the view controller comes onscreen - pg. 359
         store.fetchInterestingPhotos {
-            (PhotosResult) -> Void in // pg. 370
-            
-            switch PhotosResult { // pg. 370
+            (photosResult) -> Void in // pg. 370
+                
+            switch photosResult { // pg. 370
             case let .success(photos):
-                print("Successfully found \(photos.count) interesting photos.")
-                if let firstPhoto = photos.first { // pg. 372
-                    self.updateImageView(for: firstPhoto, type: false)
-                }
+                print("Successfully found \(photos.count) photos.")
+                self.photoDataSource.photos = photos
             case let .failure(error):
-                print("Error fetching interesting photos: \(error)")
+                print("Error fetching recent photos: \(error)")
+                self.photoDataSource.photos.removeAll()
             }
-        } 
+            self.collectionView.reloadSections(IndexSet(integer: 0)) // pg. 383
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // pg. 399
+        // Override to pass along the photo and the store
+        
+        switch segue.identifier {
+        case "showPhoto"?:
+            if let selectedIndexPath =
+                collectionView.indexPathsForSelectedItems?.first {
+                
+                let photo = photoDataSource.photos[selectedIndexPath.row]
+                
+                let destinationVC =
+                    segue.destination as! PhotoInfoViewController
+                destinationVC.photo = photo
+                destinationVC.store = store
+            }
+        default:
+            preconditionFailure("Unexpected segue identifier.")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        // Delegate method to to download image data for only cells user is
+        // attempting to view - pg. 393
+        
+        let photo = photoDataSource.photos[indexPath.row]
+        
+        // Download the image data, which could take some time
+        store.fetchImage(for: photo, completion: { (result) -> Void in
+            
+            // The index path for the photo might have changed between the
+            // time the request started and finished, so find the most
+            // interesting index path
+            
+            guard let photoIndex = self.photoDataSource.photos.index(of: photo),
+                case let .success(image) = result else {
+                    return
+            }
+            let photoIndexPath = IndexPath(item: photoIndex, section: 0)
+            
+            // When the request finishes, only update the cell if it's still visible
+            if let cell = self.collectionView.cellForItem(at: photoIndexPath) as? PhotoCollectionViewCell {
+                cell.update(with: image)
+            }
+        })
+    }
+        
      /*   // Chap. 20 Silver **
         store.fetchRecentPhotos {
             (PhotosResult) -> Void in
@@ -45,19 +102,4 @@ class PhotosViewController: UIViewController {
             }
         }
         // Chap. 20 Silver End */
-    }
-    
-    func updateImageView(for photo: Photo, type: Bool) {
-        // Method that will fetch image and display to image view
-        store.fetchImage(for: photo) {
-            (imageResult) -> Void in
-            
-            switch imageResult { // pg. 372
-            case let .success(image):
-                self.imageView.image = image
-            case let .failure(error):
-                print("Error downloading image: \(error)")
-            }
-        }
-    }
 }

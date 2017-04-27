@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Property injection to give PhotosViewController an instance of PhotoStore - pg. 359
         let rootViewController = window!.rootViewController as! UINavigationController
-        let photosViewController = rootViewController.topViewController as! PhotosViewController
+        let photosViewController =
+        rootViewController.topViewController as! PhotosViewController
         photosViewController.store = PhotoStore()
         
         // How to I inject to give RecentPhotosViewController an instance of PhotoStore
