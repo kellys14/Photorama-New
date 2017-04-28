@@ -182,6 +182,7 @@ class PhotoStore {
         viewContext.perform {
             do {
                 let allTags = try fetchRequest.execute()
+                completion(.success(allTags))
             } catch {
                 completion(.failure(error))
             }
