@@ -14,6 +14,16 @@ class PhotoInfoViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var viewCountLabel: UILabel! // Chapter 22 Bronze **
+    @IBAction func favoritesButton(_ sender: UIButton) { // Chapter 23 Silvers **
+        if photo.favorite {
+            sender.backgroundColor = UIColor.white
+            photo.favorite = false
+        }
+        else {
+            sender.backgroundColor = UIColor.red
+            photo.favorite = true
+        }
+    }
     
     var photo: Photo! {
         didSet {
@@ -36,12 +46,14 @@ class PhotoInfoViewController: UIViewController {
                 print("Error fetching image for photo: \(error)")
             }
         }
-        // Chapter 22 Bronze Challenge Start **
+        // Chapter 22 Bronze Challenge **
         photo.viewCount += 1
         store.saveCountContext()
         
-        let counter = String(photo.viewCount)
+        var counter = String(photo.viewCount)
+        counter += " views"
         viewCountLabel.text = counter
+        // Chapter 22 Bronze Challenge **
 
     }
     

@@ -106,23 +106,35 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTc-Kr-sQW">
-                                <rect key="frame" x="306" y="626" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTc-Kr-sQW">
+                                <rect key="frame" x="304" y="627" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S89-A6-Lcb">
+                                <rect key="frame" x="153" y="564" width="68" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Favorite"/>
+                                <connections>
+                                    <action selector="favoritesButton:" destination="Ril-Aa-45C" eventType="touchUpInside" id="h0T-aI-yaE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="S89-A6-Lcb" firstAttribute="centerX" secondItem="bO8-Yu-DC7" secondAttribute="centerX" id="5sK-WR-ykK"/>
                             <constraint firstItem="i5I-h4-5bC" firstAttribute="leading" secondItem="bO8-Yu-DC7" secondAttribute="leading" id="JCr-jk-gZU"/>
                             <constraint firstItem="nVU-BN-gUc" firstAttribute="top" secondItem="i5I-h4-5bC" secondAttribute="bottom" id="KbA-eH-q3q"/>
                             <constraint firstAttribute="trailing" secondItem="Atb-PN-ppS" secondAttribute="trailing" id="Mfi-Id-WK3"/>
                             <constraint firstItem="i5I-h4-5bC" firstAttribute="top" secondItem="Atb-PN-ppS" secondAttribute="bottom" id="TFO-ut-oXh"/>
                             <constraint firstItem="Atb-PN-ppS" firstAttribute="leading" secondItem="bO8-Yu-DC7" secondAttribute="leading" id="a7q-8A-UZv"/>
+                            <constraint firstItem="nVU-BN-gUc" firstAttribute="top" secondItem="QTc-Kr-sQW" secondAttribute="bottom" constant="10" id="cJO-gm-uNV"/>
                             <constraint firstItem="Atb-PN-ppS" firstAttribute="top" secondItem="h0O-Vi-yCl" secondAttribute="bottom" id="eK4-qj-CcY"/>
                             <constraint firstAttribute="trailing" secondItem="i5I-h4-5bC" secondAttribute="trailing" id="tDb-bM-ibf"/>
+                            <constraint firstItem="i5I-h4-5bC" firstAttribute="top" secondItem="S89-A6-Lcb" secondAttribute="bottom" constant="13" id="vXO-Ac-a3x"/>
+                            <constraint firstAttribute="trailing" secondItem="QTc-Kr-sQW" secondAttribute="trailing" constant="20" id="viv-68-bGT"/>
                         </constraints>
                     </view>
                     <connections>

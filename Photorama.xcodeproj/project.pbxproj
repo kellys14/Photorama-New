@@ -24,8 +24,8 @@
 		4799ABD91EB2EF3700F48505 /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799ABD71EB2EF3700F48505 /* Photo+CoreDataClass.swift */; };
 		4799ABE01EB31D7C00F48505 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799ABDF1EB31D7C00F48505 /* TagsViewController.swift */; };
 		4799ABE21EB3240100F48505 /* TagsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799ABE11EB3240100F48505 /* TagsDataSource.swift */; };
-		4799ABFA1EB3706C00F48505 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799ABF91EB3706C00F48505 /* Photo+CoreDataProperties.swift */; };
 		4799ABFE1EB3895600F48505 /* Launchscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4799ABFD1EB3895600F48505 /* Launchscreen.jpg */; };
+		4799AC041EB3A51500F48505 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799AC031EB3A51500F48505 /* Photo+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +69,8 @@
 		4799ABD71EB2EF3700F48505 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Photo+CoreDataClass.swift"; path = "../Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4799ABDF1EB31D7C00F48505 /* TagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
 		4799ABE11EB3240100F48505 /* TagsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsDataSource.swift; sourceTree = "<group>"; };
-		4799ABF91EB3706C00F48505 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Photo+CoreDataProperties.swift"; path = "../Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4799ABFD1EB3895600F48505 /* Launchscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Launchscreen.jpg; sourceTree = "<group>"; };
+		4799AC031EB3A51500F48505 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Photo+CoreDataProperties.swift"; path = "../Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +133,7 @@
 				4799ABE11EB3240100F48505 /* TagsDataSource.swift */,
 				4799AB9E1EAEE8BE00F48505 /* FlickrAPI.swift */,
 				4799ABD41EB2EE4100F48505 /* Photorama.xcdatamodeld */,
-				4799ABF91EB3706C00F48505 /* Photo+CoreDataProperties.swift */,
+				4799AC031EB3A51500F48505 /* Photo+CoreDataProperties.swift */,
 				4799ABD71EB2EF3700F48505 /* Photo+CoreDataClass.swift */,
 				4799AB751EAEE18A00F48505 /* Assets.xcassets */,
 				4799AB771EAEE18A00F48505 /* LaunchScreen.storyboard */,
@@ -297,8 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4799ABFA1EB3706C00F48505 /* Photo+CoreDataProperties.swift in Sources */,
 				4799ABD91EB2EF3700F48505 /* Photo+CoreDataClass.swift in Sources */,
+				4799AC041EB3A51500F48505 /* Photo+CoreDataProperties.swift in Sources */,
 				4799ABB61EB28E6D00F48505 /* PhotoCollectionViewCell.swift in Sources */,
 				4799ABA71EB0092D00F48505 /* PhotoDataSource.swift in Sources */,
 				4799AB9F1EAEE8BE00F48505 /* FlickrAPI.swift in Sources */,
