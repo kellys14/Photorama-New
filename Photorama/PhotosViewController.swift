@@ -23,20 +23,14 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
             
         collectionView.dataSource = photoDataSource
         collectionView.delegate = self // Sets PhotosViewController as delegate
+        
+        updateDataSource()
             
         // Starts web exchange for the photos when the view controller comes onscreen - pg. 359
         store.fetchInterestingPhotos {
             (photosResult) -> Void in // pg. 370
                 
-            switch photosResult { // pg. 370
-            case let .success(photos):
-                print("Successfully found \(photos.count) photos.")
-                self.photoDataSource.photos = photos
-            case let .failure(error):
-                print("Error fetching recent photos: \(error)")
-                self.photoDataSource.photos.removeAll()
-            }
-            self.collectionView.reloadSections(IndexSet(integer: 0)) // pg. 383
+            self.updateDataSource() // pg. 413
         }
     }
     
@@ -85,6 +79,22 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
                 cell.update(with: image)
             }
         })
+    }
+    
+    private func updateDataSource() { // pg. 413
+        // Method that will update data source with all the photos
+        
+        store.fetchAllPhotos {
+            (photosResults) in
+            
+            switch photosResults {
+            case let .success(photos):
+                self.photoDataSource.photos = photos
+            case .failure:
+                self.photoDataSource.photos.removeAll()
+            }
+            self.collectionView.reloadSections(IndexSet(integer: 0))
+        }
     }
         
      /*   // Chap. 20 Silver **
