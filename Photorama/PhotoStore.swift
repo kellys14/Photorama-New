@@ -215,27 +215,4 @@ class PhotoStore {
             try? context.save()
         }
     } // Chapter 22 Bronze Challenge End **
-    
-    // Chap. 20 Silver Challenge **
-    func fetchRecentPhotos(completion: @escaping (PhotosResult) -> Void) {
-        // CH.20 SILVER: Method that follows the fetchInterestingPhotos method
-        // setup, but requests the list of recent photos
-        
-        let url = FlickrAPI.recentPhotoURL
-        let request = URLRequest(url: url)
-        let task = session.dataTask(with: request) {
-            (data, response, error) -> Void in
-            
-            // Taken from interestingFetch see pg. 435
-            self.processPhotosRequest(data: data, error: error) {
-                (result) in
-                
-                OperationQueue.main.addOperation {
-                    completion(result)
-                }
-            }
-        }
-        task.resume()
-    }
-    // Chap. 20 Silver End */
 }
