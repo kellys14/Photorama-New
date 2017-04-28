@@ -98,20 +98,4 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
             self.collectionView.reloadSections(IndexSet(integer: 0))
         }
     }
-        
-     /*   // Chap. 20 Silver **
-        store.fetchRecentPhotos {
-            (PhotosResult) -> Void in
-            
-            switch PhotosResult {
-            case let .success(photos):
-                print("Successfully found \(photos.count) recent photos")
-                if let firstPhoto = photos.first { // pg. 372
-                    self.updateImageView(for: firstPhoto, type: true)
-                }
-            case let .failure(error):
-                print("Error fetching recent photos: \(error)")
-            }
-        }
-        // Chap. 20 Silver End */
 }

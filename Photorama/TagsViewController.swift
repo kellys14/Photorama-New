@@ -61,7 +61,7 @@ class TagsViewController: UITableViewController {
             self.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         }
     }
-    // MARK: Delegates - 2 methods below to handle selecting and displaying checkmarks
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Method tells the delegate that the specifc row is now selected
         
@@ -97,7 +97,6 @@ class TagsViewController: UITableViewController {
         
     }
     
-    // MARK: Actions - Methods for Bar Button Items
     @IBAction func done(_ sender: UIBarButtonItem) {
         // Action method to dismiss Tags view controller
         

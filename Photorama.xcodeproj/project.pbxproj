@@ -26,6 +26,7 @@
 		4799ABE01EB31D7C00F48505 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799ABDF1EB31D7C00F48505 /* TagsViewController.swift */; };
 		4799ABE21EB3240100F48505 /* TagsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799ABE11EB3240100F48505 /* TagsDataSource.swift */; };
 		4799ABFA1EB3706C00F48505 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799ABF91EB3706C00F48505 /* Photo+CoreDataProperties.swift */; };
+		4799ABFE1EB3895600F48505 /* Launchscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4799ABFD1EB3895600F48505 /* Launchscreen.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		4799ABDF1EB31D7C00F48505 /* TagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
 		4799ABE11EB3240100F48505 /* TagsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsDataSource.swift; sourceTree = "<group>"; };
 		4799ABF91EB3706C00F48505 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Photo+CoreDataProperties.swift"; path = "../Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4799ABFD1EB3895600F48505 /* Launchscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Launchscreen.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				4799ABD71EB2EF3700F48505 /* Photo+CoreDataClass.swift */,
 				4799AB751EAEE18A00F48505 /* Assets.xcassets */,
 				4799AB771EAEE18A00F48505 /* LaunchScreen.storyboard */,
+				4799ABFD1EB3895600F48505 /* Launchscreen.jpg */,
 				4799AB7A1EAEE18A00F48505 /* Info.plist */,
 			);
 			path = Photorama;
@@ -271,6 +274,7 @@
 			files = (
 				4799ABBF1EB290E800F48505 /* Main.storyboard in Resources */,
 				4799AB791EAEE18A00F48505 /* LaunchScreen.storyboard in Resources */,
+				4799ABFE1EB3895600F48505 /* Launchscreen.jpg in Resources */,
 				4799AB761EAEE18A00F48505 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

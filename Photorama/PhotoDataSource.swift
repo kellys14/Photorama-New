@@ -12,7 +12,6 @@ class PhotoDataSource: NSObject, UICollectionViewDataSource {
     // Class responsible for responding to data source questions 
     // and it will be reusable as necesary
     
-   // var photos: [Photo] = []
     var photos = [Photo]()
     
     func collectionView(_ collectionView: UICollectionView,

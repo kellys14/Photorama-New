@@ -45,7 +45,7 @@ class PhotoInfoViewController: UIViewController {
 
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // pg. 431
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Override method when the Tags bar button item is tapped, the
         // PhotosInfoViewController needs to pass along its store and
         // photo to the TagsViewController
