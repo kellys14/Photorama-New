@@ -13,6 +13,7 @@ class PhotoInfoViewController: UIViewController {
     // and display a single photo
     
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var viewCountLabel: UILabel! // Chapter 22 Bronze **
     
     var photo: Photo! {
         didSet {
@@ -35,6 +36,13 @@ class PhotoInfoViewController: UIViewController {
                 print("Error fetching image for photo: \(error)")
             }
         }
+        // Chapter 22 Bronze Challenge Start **
+        photo.viewCount += 1
+        store.saveCountContext()
+        
+        let counter = String(photo.viewCount)
+        viewCountLabel.text = counter
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // pg. 431

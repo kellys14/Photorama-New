@@ -9,21 +9,21 @@
 import UIKit
 import CoreData
 
-enum ImageResult { // pg. 371
+enum ImageResult {
     case success(UIImage)
     case failure(Error)
 }
 
-enum PhotoError: Error { // pg. 371
+enum PhotoError: Error {
     case imageCreationError
 }
 
-enum PhotosResult { // pg. 364
+enum PhotosResult {
     case success([Photo])
     case failure(Error)
 }
 
-enum TagsResult { // pg. 423
+enum TagsResult {
     case success([Tag])
     case failure(Error)
 }
@@ -31,7 +31,7 @@ enum TagsResult { // pg. 423
 class PhotoStore {
     // Class responsible for initiating the web service requests
     
-    let imageStore = ImageStore() // Property for an ImageStore - pg. 397
+    let imageStore = ImageStore() // Property for an ImageStore
     
     let persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Photorama")
@@ -43,7 +43,7 @@ class PhotoStore {
         return container
     }()
     
-    private let session: URLSession = { // pg. 358
+    private let session: URLSession = {
         // Creates an instance of the web session that holds properties/policies
         // for the given session
         
@@ -51,7 +51,7 @@ class PhotoStore {
         return URLSession(configuration: config)
     }()
     
-    func fetchInterestingPhotos(completion: @escaping (PhotosResult) -> Void) { // pg. 358, 362, 368
+    func fetchInterestingPhotos(completion: @escaping (PhotosResult) -> Void) {
         // Method to create a URLRequest that connects to api.flickr.com and asks
         // for the list of interesting photos, then uses the URLSession to create
         // a URLSessionDataTask that transfers the request to the server
@@ -73,7 +73,7 @@ class PhotoStore {
             let responseInfo = response as! HTTPURLResponse
             print("StatusCode: \(responseInfo.statusCode)")
             print("HeaderField: \(responseInfo.allHeaderFields)")
-            // Chapter 20 Bronze Challenge End
+            // Chapter 20 Bronze Challenge End **
             
             
         }
@@ -81,7 +81,7 @@ class PhotoStore {
     }
     
     private func processPhotosRequest(data: Data?, error: Error?,
-                                      completion: @escaping (PhotosResult) -> Void) { // pg. 432
+                                      completion: @escaping (PhotosResult) -> Void) {
         // Method that will process JSON data that is returned from the web request
         
         guard let jsonData = data else {
@@ -89,12 +89,12 @@ class PhotoStore {
             return
         }
         
-        persistentContainer.performBackgroundTask { // pg. 433
+        persistentContainer.performBackgroundTask {
             (context) in
             
             let result = FlickrAPI.photos(fromJSON: jsonData, into: context)
             
-            do { // pg. 433
+            do {
                 try context.save()
             } catch {
                 print("Error saving to Core Data: \(error).")
@@ -102,7 +102,7 @@ class PhotoStore {
                 return
             }
             
-            switch result { // pg. 434
+            switch result {
             case let .success(photos):
                 let photoIDs = photos.map { return $0.objectID }
                 let viewContext = self.persistentContainer.viewContext
@@ -115,13 +115,13 @@ class PhotoStore {
         }
     }
     
-    func fetchImage(for photo: Photo, completion: @escaping (ImageResult) -> Void) { // pg. 371, 372, 407
+    func fetchImage(for photo: Photo, completion: @escaping (ImageResult) -> Void) {
         // Method to download image data
         
-        guard let photoKey = photo.photoID else { // pg. 407
+        guard let photoKey = photo.photoID else {
             preconditionFailure("Photo expected to have a photoID.")
         }
-        if let image = imageStore.image(forKey: photoKey) { // pg. 397
+        if let image = imageStore.image(forKey: photoKey) {
             // Image Caching to prevent previously visible cells from
             // needing to be reloaded when scrolling
             OperationQueue.main.addOperation {
@@ -129,7 +129,7 @@ class PhotoStore {
             }
         }
         
-        guard let photoURL = photo.remoteURL else { // pg. 407
+        guard let photoURL = photo.remoteURL else {
             preconditionFailure("Photo expected to have a remote URL.")
         }
         let request = URLRequest(url: photoURL as URL)
@@ -137,22 +137,22 @@ class PhotoStore {
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
             
-            let result = self.processImageRequest(data: data, error: error) // pg. 372
+            let result = self.processImageRequest(data: data, error: error)
             
-            if case let .success(image) = result { // pg. 397
+            if case let .success(image) = result {
                 // Image caching continued
                 self.imageStore.setImage(image, forKey: photoKey)
             }
             
-            OperationQueue.main.addOperation { // pg. 374
-                completion(result) // pg. 372
+            OperationQueue.main.addOperation {
+                completion(result)
             }
         }
         task.resume()
         
     }
     
-    func fetchAllPhotos(completion: @escaping (PhotosResult) -> Void ) { // pg. 413
+    func fetchAllPhotos(completion: @escaping (PhotosResult) -> Void ) {
         // Method that will fetch the Photo instances from the view context
         
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
@@ -171,7 +171,7 @@ class PhotoStore {
         }
     }
     
-    func fetchAllTags(completion: @escaping (TagsResult) -> Void) { // pg. 423
+    func fetchAllTags(completion: @escaping (TagsResult) -> Void) {
         // Method that fetches all the tags from the view content
         
         let fetchRequest: NSFetchRequest<Tag> = Tag.fetchRequest()
@@ -189,7 +189,7 @@ class PhotoStore {
         }
     }
     
-    private func processImageRequest(data: Data?, error: Error?) -> ImageResult { // pg. 372
+    private func processImageRequest(data: Data?, error: Error?) -> ImageResult {
         // Method that processes data from the web service request into an image
         
         guard
@@ -205,6 +205,16 @@ class PhotoStore {
         }
         return .success(image)
     }
+    
+    // Chapter 22 Bronze Challenge **
+    func saveCountContext() {
+        // Method to check for changes in view count and update if it has
+        let context = persistentContainer.viewContext
+        if context.hasChanges == true {
+            print("viewCount context updated")
+            try? context.save()
+        }
+    } // Chapter 22 Bronze Challenge End **
     
     // Chap. 20 Silver Challenge **
     func fetchRecentPhotos(completion: @escaping (PhotosResult) -> Void) {
