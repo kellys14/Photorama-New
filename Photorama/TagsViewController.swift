@@ -29,7 +29,6 @@ class TagsViewController: UITableViewController {
         // of TagsDataSource - pg. 424
         tableView.dataSource = tagDataSource
         tableView.delegate = self // pg. 425
-        
         updateTags()
     }
     

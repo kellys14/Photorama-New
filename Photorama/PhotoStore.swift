@@ -61,13 +61,11 @@ class PhotoStore {
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
             
-            var result = self.processPhotosRequest(data: data, error: error) // pg. 368
-            
-            if case .success = result {
-                do {
-                    try self.persistentContainer.viewContext.save()
-                } catch let error {
-                    result = .failure(error)
+            self.processPhotosRequest(data: data, error: error) {
+                (result) in
+                
+                OperationQueue.main.addOperation {
+                    completion(result)
                 }
             }
             
@@ -77,21 +75,44 @@ class PhotoStore {
             print("HeaderField: \(responseInfo.allHeaderFields)")
             // Chapter 20 Bronze Challenge End
             
-            OperationQueue.main.addOperation {
-                completion(result) // pg. 368
-            }
+            
         }
         task.resume()
     }
     
-    private func processPhotosRequest(data: Data?, error: Error?) -> PhotosResult { // pg. 368
+    private func processPhotosRequest(data: Data?, error: Error?,
+                                      completion: @escaping (PhotosResult) -> Void) { // pg. 432
         // Method that will process JSON data that is returned from the web request
         
         guard let jsonData = data else {
-            return .failure(error!)
+            completion(.failure(error!))
+            return
         }
         
-        return FlickrAPI.photos(fromJSON: jsonData, into: persistentContainer.viewContext)
+        persistentContainer.performBackgroundTask { // pg. 433
+            (context) in
+            
+            let result = FlickrAPI.photos(fromJSON: jsonData, into: context)
+            
+            do { // pg. 433
+                try context.save()
+            } catch {
+                print("Error saving to Core Data: \(error).")
+                completion(.failure(error))
+                return
+            }
+            
+            switch result { // pg. 434
+            case let .success(photos):
+                let photoIDs = photos.map { return $0.objectID }
+                let viewContext = self.persistentContainer.viewContext
+                let viewContextPhotos =
+                    photoIDs.map { return viewContext.object(with: $0) } as! [Photo]
+                completion(.success(viewContextPhotos))
+            case .failure:
+                completion(result)
+            }
+        }
     }
     
     func fetchImage(for photo: Photo, completion: @escaping (ImageResult) -> Void) { // pg. 371, 372, 407
@@ -194,10 +215,13 @@ class PhotoStore {
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
             
-            let result = self.processPhotosRequest(data: data, error: error)
-            
-            OperationQueue.main.addOperation {
-                completion(result)
+            // Taken from interestingFetch see pg. 435
+            self.processPhotosRequest(data: data, error: error) {
+                (result) in
+                
+                OperationQueue.main.addOperation {
+                    completion(result)
+                }
             }
         }
         task.resume()

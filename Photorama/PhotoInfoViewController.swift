@@ -52,5 +52,6 @@ class PhotoInfoViewController: UIViewController {
         default:
             preconditionFailure("Unexpected segue identifier")
         }
+        
     }
 }
