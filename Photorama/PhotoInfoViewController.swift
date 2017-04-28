@@ -14,7 +14,6 @@ class PhotoInfoViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     
-    var store: PhotoStore!
     var photo: Photo! {
         didSet {
             // When photo is set on this view controller, the navigation
@@ -22,11 +21,12 @@ class PhotoInfoViewController: UIViewController {
             navigationItem.title = photo.title
         }
     }
-    
+    var store: PhotoStore!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        store.fetchImage(for: photo, completion: { (result) -> Void in
+        store.fetchImage(for: photo) { (result) -> Void in
             // Sets the image on imageView when the view is loaded
             switch result {
             case let .success(image):
@@ -34,6 +34,6 @@ class PhotoInfoViewController: UIViewController {
             case let .failure(error):
                 print("Error fetching image for photo: \(error)")
             }
-        })
+        }
     }
 }
