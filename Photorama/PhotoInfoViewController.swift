@@ -36,4 +36,21 @@ class PhotoInfoViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // pg. 431
+        // Override method when the Tags bar button item is tapped, the
+        // PhotosInfoViewController needs to pass along its store and
+        // photo to the TagsViewController
+        
+        switch segue.identifier {
+        case "showTags"?:
+            let navController = segue.destination as! UINavigationController
+            let tagController = navController.topViewController as! TagsViewController
+            
+            tagController.store = store
+            tagController.photo = photo
+        default:
+            preconditionFailure("Unexpected segue identifier")
+        }
+    }
 }

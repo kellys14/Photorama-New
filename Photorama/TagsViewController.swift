@@ -98,5 +98,52 @@ class TagsViewController: UITableViewController {
         
     }
     
+    // MARK: Actions - Methods for Bar Button Items
+    @IBAction func done(_ sender: UIBarButtonItem) { // pg. 429
+        // Action method to dismiss Tags view controller
+        
+        presentingViewController?.dismiss(animated: true,
+                                          completion: nil)
+    }
+    
+    @IBAction func addNewTag(_ sender: UIBarButtonItem) { // pg. 429
+        // Action method to add a new tag to the set for a photo
+        
+        let alertController = UIAlertController(title: "Add Tag", message: nil,
+                                                preferredStyle: .alert)
+        
+        alertController.addTextField {
+            (textField) -> Void in
+            textField.placeholder = "tag name"
+            textField.autocapitalizationType = .words
+        }
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) {
+            (action) -> Void in
+            
+            if let tagName = alertController.textFields?.first?.text {
+                // Inserts a new Tag into the context. Then save the context,
+                // update the list of tags, and reload the table view section
+                let context = self.store.persistentContainer.viewContext
+                let newTag = NSEntityDescription.insertNewObject(forEntityName: "Tag",
+                                                                 into: context)
+                newTag.setValue(tagName, forKey: "name")
+                
+                do {
+                    try self.store.persistentContainer.viewContext.save()
+                } catch let error {
+                    print("Core Data save failed: \(error)")
+                }
+                self.updateTags()
+            }
+            
+        }
+        alertController.addAction(okAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
     
 }
