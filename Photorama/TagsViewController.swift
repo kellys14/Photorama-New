@@ -20,19 +20,19 @@ class TagsViewController: UITableViewController {
     
     var selectedIndexPaths = [IndexPath]()
     
-    let tagDataSource = TagsDataSource() // pg. 424
+    let tagDataSource = TagsDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Sets the dataSource for the table view to be an instance
-        // of TagsDataSource - pg. 424
+        // of TagsDataSource
         tableView.dataSource = tagDataSource
-        tableView.delegate = self // pg. 425
+        tableView.delegate = self
         updateTags()
     }
     
-    func updateTags() { // pg. 424
+    func updateTags() { 
         // Method to fetch the tags and associate them with the tags
         // property on the data source
         
@@ -62,7 +62,7 @@ class TagsViewController: UITableViewController {
         }
     }
     // MARK: Delegates - 2 methods below to handle selecting and displaying checkmarks
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { // pg. 426
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Method tells the delegate that the specifc row is now selected
         
         let tag = tagDataSource.tags[indexPath.row]
@@ -85,7 +85,7 @@ class TagsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
-                            forRowAt indexPath: IndexPath) { // pg. 426
+                            forRowAt indexPath: IndexPath) {
         // Method tells the delegate the table view whether or not to
         // add a checkmark for a cell in a particular row
         
@@ -98,14 +98,14 @@ class TagsViewController: UITableViewController {
     }
     
     // MARK: Actions - Methods for Bar Button Items
-    @IBAction func done(_ sender: UIBarButtonItem) { // pg. 429
+    @IBAction func done(_ sender: UIBarButtonItem) {
         // Action method to dismiss Tags view controller
         
         presentingViewController?.dismiss(animated: true,
                                           completion: nil)
     }
     
-    @IBAction func addNewTag(_ sender: UIBarButtonItem) { // pg. 429
+    @IBAction func addNewTag(_ sender: UIBarButtonItem) {
         // Action method to add a new tag to the set for a photo
         
         let alertController = UIAlertController(title: "Add Tag", message: nil,

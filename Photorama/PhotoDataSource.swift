@@ -16,14 +16,14 @@ class PhotoDataSource: NSObject, UICollectionViewDataSource {
     var photos = [Photo]()
     
     func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int { // pg. 383
+                        numberOfItemsInSection section: Int) -> Int {
         // Data source callback that asks how many cells to display
 
         return photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { // pg. 383
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { 
         // Data source callback that asks for UICollectionViewCell to
         // display for a given index path
         

@@ -12,7 +12,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
     // Class responsible for the view that will hold the data from
     // from the web service
     
-    @IBOutlet var collectionView: UICollectionView! // pg. 383
+    @IBOutlet var collectionView: UICollectionView!
     
     var store: PhotoStore!
     let photoDataSource = PhotoDataSource()
@@ -28,15 +28,15 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         
         updateDataSource()
             
-        // Starts web exchange for the photos when the view controller comes onscreen - pg. 359
+        // Starts web exchange for the photos when the view controller comes onscreen
         store.fetchInterestingPhotos {
-            (photosResult) -> Void in // pg. 370
+            (photosResult) -> Void in
                 
-            self.updateDataSource() // pg. 413
+            self.updateDataSource()
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // pg. 399
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Override to pass along the photo and the store
         
         switch segue.identifier {
@@ -59,7 +59,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         // Delegate method to to download image data for only cells user is
-        // attempting to view - pg. 393
+        // attempting to view
         
         let photo = photoDataSource.photos[indexPath.row]
         
@@ -83,7 +83,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         })
     }
     
-    private func updateDataSource() { // pg. 413
+    private func updateDataSource() {
         // Method that will update data source with all the photos
         
         store.fetchAllPhotos {

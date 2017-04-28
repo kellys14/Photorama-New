@@ -16,14 +16,14 @@ class TagsDataSource: NSObject, UITableViewDataSource {
     var tags: [Tag] = []
     
     func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int { // pg. 423
+                   numberOfRowsInSection section: Int) -> Int {
         // Method that tells the data source how many rows to be given
         
         return tags.count
     }
     
     func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath) -> UITableViewCell { // pg. 423
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell { 
         // Method that asks the data source for a cell to insert at a
         // particular location
         
