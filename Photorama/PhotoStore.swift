@@ -23,7 +23,13 @@ enum PhotosResult { // pg. 364
     case failure(Error)
 }
 
+enum TagsResult { // pg. 423
+    case success([Tag])
+    case failure(Error)
+}
+
 class PhotoStore {
+    // Class responsible for initiating the web service requests
     
     let imageStore = ImageStore() // Property for an ImageStore - pg. 397
     
@@ -138,6 +144,23 @@ class PhotoStore {
             do {
                 let allPhotos = try viewContext.fetch(fetchRequest)
                 completion(.success(allPhotos))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func fetchAllTags(completion: @escaping (TagsResult) -> Void) { // pg. 423
+        // Method that fetches all the tags from the view content
+        
+        let fetchRequest: NSFetchRequest<Tag> = Tag.fetchRequest()
+        let sortByName = NSSortDescriptor(key: #keyPath(Tag.name), ascending: true)
+        fetchRequest.sortDescriptors = [sortByName]
+        
+        let viewContext = persistentContainer.viewContext
+        viewContext.perform {
+            do {
+                let allTags = try fetchRequest.execute()
             } catch {
                 completion(.failure(error))
             }

@@ -9,6 +9,8 @@
 import UIKit
 
 class PhotosViewController: UIViewController, UICollectionViewDelegate {
+    // Class responsible for the view that will hold the data from
+    // from the web service
     
     @IBOutlet var collectionView: UICollectionView! // pg. 383
     

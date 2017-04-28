@@ -9,6 +9,7 @@
 import UIKit
 
 class ImageStore: NSObject {
+    // Class responsible for operations regarding image caching
     
     let cache = NSCache<NSString, UIImage>()
     // let cache = NSCache()
